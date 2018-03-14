@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cantidad productos:</strong>
+  <%= @carrito.cantidad_productos %>
+</p>
+
+<%= link_to 'Edit', edit_carrito_path(@carrito) %> |
+<%= link_to 'Back', carritos_path %>
