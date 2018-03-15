@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  devise_for :users, controllers: { registrations: "devise/registrations", sessions: "devise/sessions" }
   resources :carritos
   resources :productos
   resources :users
