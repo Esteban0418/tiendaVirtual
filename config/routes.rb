@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :carritos
-  resources :inventarios
   resources :productos
   resources :users
 
