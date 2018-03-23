@@ -15,6 +15,7 @@ class ProductosController < ApplicationController
   # GET /productos/new
   def new
     @producto = Producto.new
+
   end
 
   # GET /productos/1/edit
@@ -25,6 +26,8 @@ class ProductosController < ApplicationController
   # POST /productos.json
   def create
     @producto = Producto.new(producto_params)
+      @producto.inventario_id = params[:inventario_id]
+  
 
     respond_to do |format|
       if @producto.save

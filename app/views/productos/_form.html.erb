@@ -15,7 +15,7 @@
     <%= form.label :nombre %>
     <%= form.text_field :nombre, id: :producto_nombre %>
   </div>
-
+   <%= hidden_field_tag :inventario_id%> 
   <div class="field">
     <%= form.label :descripcion %>
     <%= form.text_field :descripcion, id: :producto_descripcion %>
