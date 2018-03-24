@@ -4,6 +4,7 @@ class ProductosController < ApplicationController
   # GET /productos
   # GET /productos.json
   def index
+
     @productos = Producto.all
   end
 
@@ -14,7 +15,9 @@ class ProductosController < ApplicationController
 
   # GET /productos/new
   def new
+    
     @producto = Producto.new
+
 
   end
 
@@ -25,12 +28,15 @@ class ProductosController < ApplicationController
   # POST /productos
   # POST /productos.json
   def create
-    @producto = Producto.new(producto_params)
-      @producto.inventario_id = params[:inventario_id]
+     @inventario =Inventario.new(cantidad: params[:producto][:cantidad].to_i,precio: params[:producto][:cantidad]*params[:producto][:precio].to_i)
+   puts @inventario.inspect 
+     puts @inventario.producto.inspect  
+    @producto = @inventario.build_producto(producto_params)
+  
   
 
     respond_to do |format|
-      if @producto.save
+      if @inventario.save
         format.html { redirect_to @producto, notice: 'Producto was successfully created.' }
         format.json { render :show, status: :created, location: @producto }
       else
@@ -72,6 +78,6 @@ class ProductosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def producto_params
-      params.require(:producto).permit(:nombre, :descripcion, :tipo, :material, :dimenciones, :color, :peso)
+      params.require(:producto).permit(:nombre, :descripcion, :tipo, :material, :dimenciones, :color, :peso, :precio, :cantidad)
     end
 end

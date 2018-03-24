@@ -1,3 +1,3 @@
 class Inventario < ActiveRecord::Base
- has_many :productos
+ has_one :producto
 end
