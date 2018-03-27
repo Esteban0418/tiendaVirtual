@@ -4,8 +4,12 @@ class ProductosController < ApplicationController
   # GET /productos
   # GET /productos.json
   def index
-
-    @productos = Producto.all
+@producto = Producto.all
+  if params[:search]
+    @productos = Producto.search(params[:search]).order("created_at DESC")
+  else
+    @productos = Producto.all.order("created_at DESC")
+  end
   end
 
   # GET /productos/1
