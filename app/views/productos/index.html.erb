@@ -1,12 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Productos</h1>
- <div class="label"> <%= link_to 'Iniciar Sesion', new_user_session_path %></div>
-  <div class="label"> <%= link_to 'registrarse', new_user_path  %></div>
+ 
   <%= form_tag(productos_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
+ <%- if user_signed_in? %>
+  
+      <%= link_to 'Salir',destroy_user_session_path, method: :delete %>
+      
+    <td><%= link_to 'información usuario', current_user%></td>
+     
+     
+     
+ 
+     <% else %>
+      
+       <%= link_to 'Iniciar Sesion', new_user_session_path %></div>
+       <div class="label"> <%= link_to 'registrarse', new_user_path  %></div>
+    <% end %>
 <table>
   <thead>
     <tr>
