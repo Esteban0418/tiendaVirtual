@@ -1,4 +1,115 @@
-/*
+body{
+    background-color: #464646;  
+    background-position: center center;
+}
+.container {
+      padding: 80px 120px;
+  }
+  .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+  .person:hover {
+      border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+     
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
+/* Add a dark background color with a little bit see-through */ 
+.navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 15px !important;
+    
+    opacity:0.9;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+}
+.jumbotron { 
+    background-color: #464646; /* Orange */
+    color: #ffffff;
+    height:  200px;
+
+}
+.labelblanco{
+    color: white;
+}
+.panel-groupa{
+    margin-left: 0px;
+    margin-right: 0px
+}
+.panel-groupb{
+    margin-right: 300px;
+    margin-left: 300px;
+}
+.containera{
+    margin-left: 15px;
+    margin-right: 15px
+}
+.labela{
+    text-align: left;
+}
+.labelb{
+    text-align: left;
+}
+.labelc{
+    
+    font-size: 1.4em;
+    text-align: center;
+}
+.panel-bodya{
+    height: 400px;
+}
+.labeld{
+  text-align: center;
+  font-size: 2.4em;
+}
+.labele{
+  font-size: 1.4em;
+  color: white;
+}
+  /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,3 +124,4 @@
  *= require_tree .
  *= require_self
  */
+
