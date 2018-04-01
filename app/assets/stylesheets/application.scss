@@ -61,6 +61,15 @@ body{
     border-color: transparent;
 }
 
+.glyphicon{
+    margin-right:10px;
+}
+
+.btn.contacto{
+    margin-top:1em;
+    color:black;
+}
+
 /* Dropdown */
 .open .dropdown-toggle {
     color: #fff ;
@@ -108,6 +117,31 @@ body{
 .labele{
   font-size: 1.4em;
   color: white;
+}
+
+.containera{
+    .panel-bodya{
+        img{
+            width:100%;
+        }
+
+        .text-container{
+            padding:1em;
+            h6{
+                font-size:1.2em;
+                color:black;
+            }
+
+            h6.cash{
+                color:green;
+            }
+
+            p{
+                color:gray;
+                font-size: 1em;
+            }
+        }
+    }
 }
   /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

@@ -55,29 +55,28 @@
 <br><br>
 <div id="myPage" class="containera">
 	<div class="panel-groupa">
-	<div class="panel panel-default">
-		<div class="panel-heading">Productos disponibles</div>
-		<div class="panel-bodya">
-<div class="row">
-	<% @productos.each do |producto| %>
-		<div class="col-xs-6">
-			<div style="border:thin solid black;">
-				<%= image_tag producto.foto.url(:medium) %>
-				<h6><%= producto.nombre %></h6>
-				<%= producto.descripcion %>
-				<%= producto.tipo %>
-				<%= producto.material %>
-				<%= producto.dimenciones %>
-				<%= producto.color %>
-				<%= producto.peso %>
-				<%= producto.precio %>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Productos disponibles
 			</div>
-			<%= link_to 'Ver', producto %>
+			<div class="panel-bodya">
+				<div class="row">
+					<% @productos.each do |producto| %>
+						<div class="col-xs-12 col-lg-3" style="margin-top:2em;">
+							<%= link_to producto do %>
+								<div style="border:thin solid black;">
+									<%= image_tag producto.foto.url(:medium) %>
+									<div class="text-container">
+										<h6><%= producto.nombre %></h6>
+										<p><%= producto.descripcion %></p>
+										<h6 class="cash">$<b><%= producto.precio %></b></h6>
+									</div>
+								</div>
+							<% end %>
+						</div>
+					<% end %>
+				</div>
+			</div>
 		</div>
-	<% end %>
-</div>
-	</div>
 	</div>
 </div>
-</div>
-
