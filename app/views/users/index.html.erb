@@ -1,45 +1,48 @@
 <p id="notice"><%= notice %></p>
+ <div class="jumbotron text-center">
+      <h1>Usuarios</h1> 
+</div>
 
-<h1>Users</h1>
-
-<table>
+<div class="containerb">
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>Documento</th>
-      <th>Nit</th>
-      <th>Telefono</th>
-      <th>Nombre</th>
-      <th>Direccion</th>
-      <th>Celular</th>
-      <th>Ciudad</th>
-      <th>Password</th>
-      <th>Profesion</th>
-      <th>Correo</th>
+      <th><div class="labele">Documento</div></th>
+      <th><div class="labele">Nit</div></th>
+      <th><div class="labele">Telefono</div></th>
+      <th><div class="labele">Nombre</div></th>
+      <th><div class="labele">Direccion</div></th>
+      <th><div class="labele">Celular</div></th>
+      <th><div class="labele">Ciudad</div></th>
+      <th><div class="labele">Password</div></th>
+      <th><div class="labele">Profesion</div></th>
+      <th><div class="labele">Correo</div></th>
       <th colspan="3"></th>
     </tr>
   </thead>
+ 
 
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.documento %></td>
-        <td><%= user.NIT %></td>
-        <td><%= user.telefono %></td>
-        <td><%= user.nombre %></td>
-        <td><%= user.direccion %></td>
-        <td><%= user.celular %></td>
-        <td><%= user.ciudad %></td>
-        <td><%= user.password %></td>
-        <td><%= user.profesion %></td>
-        <td><%= user.correo %></td>
-        <td><%= link_to 'Show', user %></td>
+        <td><div class="labelf"><%= user.documento %></div></td>
+        <td><div class="labelf"><%= user.NIT %></div></td>
+        <td><div class="labelf"><%= user.telefono %></div></td>
+        <td><div class="labelf"><%= user.nombre %></div></td>
+        <td><div class="labelf"><%= user.direccion %></div></td>
+        <td><div class="labelf"><%= user.celular %></div></td>
+        <td><div class="labelf"><%= user.ciudad %></div></td>
+        <td><div class="labelf"><%= user.password %></div></td>
+        <td><div class="labelf"><%= user.profesion %></div></td>
+        <td><div class="labelf"><%= user.correo %></div></td>
+        <td><div class="labelf"><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </tr></div>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
 <%= link_to 'New User', new_user_path %>
+<br><br><br>

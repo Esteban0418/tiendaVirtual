@@ -1,54 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Documento:</strong>
-  <%= @user.documento %>
-</p>
+  <div class="containerb">
+    <table class="table table-bordered">
+       <thead>
+         <tr>
+          <th><div class="labele">Documento:</div></th>
+           <th><div class="labele">Nit:</div></th>
+           <th><div class="labele">Telefono:</div></th>
+           <th><div class="labele">Nombre:</div></th>
+           <th><div class="labele">Direccion:</div></th>
+           <th><div class="labele">Celular:</div></th>
+           <th><div class="labele">Ciudad:</div></th>
+           <th><div class="labele">Ciudad:</div></th>
+           <th><div class="labele">Password:</div></th>
+           <th><div class="labele">Profesion:</div></th>
+           <th><div class="labele">Correo:</div></th>
+            </tr>
+    </thead>
+    <tbody>
+      <tr>
+         <td><div class="labelf"><%= @user.documento %></div></td>
+           <td><div class="labelf">  <%= @user.NIT %></div></td>
+             <td><div class="labelf"><%= @user.telefono %></div></td>
+             <td><div class="labelf"><%= @user.nombre %></div></td>
+             <td><div class="labelf"><%= @user.direccion %></div></td>
+             <td><div class="labelf"><%= @user.celular %></div></td>
+             <td><div class="labelf"><%= @user.ciudad %></div></td>
+             <td><div class="labelf"><%= @user.password %></div></td>
+             <td> <div class="labelf"><%= @user.profesion %></div></td>
+             <td><div class="labelf"><%= @user.email %></div></td>
+             </tr>
+    </tbody>
+  </table>
+  </div>
 
-<p>
-  <strong>Nit:</strong>
-  <%= @user.NIT %>
-</p>
-
-<p>
-  <strong>Telefono:</strong>
-  <%= @user.telefono %>
-</p>
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @user.nombre %>
-</p>
-
-<p>
-  <strong>Direccion:</strong>
-  <%= @user.direccion %>
-</p>
-
-<p>
-  <strong>Celular:</strong>
-  <%= @user.celular %>
-</p>
-
-<p>
-  <strong>Ciudad:</strong>
-  <%= @user.ciudad %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Profesion:</strong>
-  <%= @user.profesion %>
-</p>
-
-<p>
-  <strong>Correo:</strong>
-  <%= @user.email %>
-</p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

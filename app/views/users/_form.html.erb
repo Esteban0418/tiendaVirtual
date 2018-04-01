@@ -11,58 +11,75 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="container">
+  <div class="panel-groupb">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4>Registro</h4></div>
+      <div class="panel-body">
+        <div class="labela">
+  
     <%= form.label :documento %>
+  <div class="field">
     <%= form.text_field :documento, id: :user_documento %>
   </div>
-
-  <div class="field">
+  
     <%= form.label :NIT %>
+   <div class="field">
     <%= form.text_field :NIT, id: :user_NIT %>
   </div>
 
-  <div class="field">
     <%= form.label :telefono %>
+   <div class="text_field">
     <%= form.text_field :telefono, id: :user_telefono %>
   </div>
 
-  <div class="field">
     <%= form.label :nombre %>
+   <div class="field">
     <%= form.text_field :nombre, id: :user_nombre %>
   </div>
-
-  <div class="field">
+  
     <%= form.label :direccion %>
+   <div class="field">
     <%= form.text_field :direccion, id: :user_direccion %>
   </div>
 
-  <div class="field">
+  
     <%= form.label :celular %>
-    <%= form.text_field :celular, id: :user_celular %>
+    <div class="field">
+      <%= form.text_field :celular, id: :user_celular %>
   </div>
 
-  <div class="field">
+  
     <%= form.label :ciudad %>
-    <%= form.text_field :ciudad, id: :user_ciudad %>
+    <div class="field">
+      <%= form.text_field :ciudad, id: :user_ciudad %>
   </div>
 
-  <div class="field">
+  
     <%= form.label :password %>
+   <div class="field">
     <%= form.text_field :password, id: :user_password %>
   </div>
 
-  <div class="field">
+ 
     <%= form.label :profesion %>
-    <%= form.text_field :profesion, id: :user_profesion %>
+    <div class="field">
+     <%= form.text_field :profesion, id: :user_profesion %>
   </div>
 
-  <div class="field">
+  
     <%= form.label :email %>
+   <div class="field">
     <%= form.text_field :email, id: :user_correo %>
-  </div>
+  </div><br>
 
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</div></div>
+</div>
+</div>
+</div>
+
