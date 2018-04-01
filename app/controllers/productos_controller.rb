@@ -33,8 +33,7 @@ class ProductosController < ApplicationController
   # POST /productos.json
   def create
      @inventario =Inventario.new(cantidad: params[:producto][:cantidad].to_i,precio: params[:producto][:cantidad]*params[:producto][:precio].to_i)
-   puts @inventario.inspect 
-     puts @inventario.producto.inspect  
+  
     @producto = @inventario.build_producto(producto_params)
   
   
