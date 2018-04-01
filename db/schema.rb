@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180401162348) do
+
+ActiveRecord::Schema.define(version: 20180401194411) do
+
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -35,15 +37,12 @@ ActiveRecord::Schema.define(version: 20180401162348) do
     t.index ["producto_id"], name: "index_carrito_productos_on_producto_id"
   end
 
-  create_table "carritos", force: :cascade do |t|
-    t.integer "cantidad_productos"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+# Could not dump table "carritos" because of following StandardError
+#   Unknown type 'reference' for column 'user'
 
   create_table "inventarios", force: :cascade do |t|
-    t.integer "cantidad"
-    t.integer "precio"
+    t.integer "cantidad", limit: 8
+    t.integer "precio", limit: 8
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,7 +58,7 @@ ActiveRecord::Schema.define(version: 20180401162348) do
     t.integer "precio", limit: 8
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "cantidad"
+    t.integer "cantidad", limit: 8
     t.integer "inventario_id"
     t.string "foto_file_name"
     t.string "foto_content_type"

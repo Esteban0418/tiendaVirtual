@@ -11,59 +11,75 @@
     </div>
   <% end %>
 
+  <div class="container">
+  <div class="panel-groupc">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4>Productos</h4></div>
+      <div class="panel-body">
+        <div class="labela">
 
-  <div class="field">
+  
     <%= form.label :foto %>
+    <div class="field">
     <%= form.file_field :foto, id: :producto_foto %>
   </div>
-  <div class="field">
+  
     <%= form.label :nombre %>
+    <div class="field">
     <%= form.text_field :nombre, id: :producto_nombre %>
   </div>
    
-  <div class="field">
+  
     <%= form.label :descripcion %>
+    <div class="field">
     <%= form.text_field :descripcion, id: :producto_descripcion %>
   </div>
 
-  <div class="field">
+  
     <%= form.label :tipo %>
+    <div class="field">
     <%= form.text_field :tipo, id: :producto_tipo %>
   </div>
 
-  <div class="field">
+  
     <%= form.label :material %>
+    <div class="field">
     <%= form.text_field :material, id: :producto_material %>
   </div>
 
-  <div class="field">
-    <div class="field">
+  
+    
       <%= form.label :precio %>
+      <div class="field">
       <%= form.text_field :precio, id: :producto_precio %>
     </div>    
   </div>
 
-  <div class="field">
+  
     <%= form.label :dimenciones %>
+    <div class="field">
     <%= form.text_field :dimenciones, id: :producto_dimenciones %>
   </div>
 
-  <div class="field">
+  
     <%= form.label :color %>
+    <div class="field">
     <%= form.text_field :color, id: :producto_color %>
   </div>
 
-  <div class="field">
+  
     <%= form.label :peso %>
+    <div class="field">
     <%= form.number_field :peso, id: :producto_peso %>
   </div>
-  <div class="field">
+  
     <%= form.label :cantidad %>
+    <div class="field">
     <%= form.number_field :cantidad, id: :producto_cantidad %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
-  </div>
+  </div></div></div></div></div>
  
 <% end %>

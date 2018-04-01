@@ -76,10 +76,14 @@ body{
     background-color: #555 !important;
 }
 .jumbotron { 
-    background-color: #464646; /* Orange */
+    background-color: #464646;
     color: #ffffff;
     height:  200px;
 
+}
+.texto{
+  text-align: center;
+  color: white;
 }
 .labelblanco{
     color: white;
@@ -91,6 +95,10 @@ body{
 .panel-groupb{
     margin-right: 300px;
     margin-left: 300px;
+}
+.panel-groupc{
+    margin-right: 200px;
+    margin-left: 200px;
 }
 .containera{
     margin-left: 15px;
@@ -118,6 +126,7 @@ body{
   font-size: 1.4em;
   color: white;
 }
+<<<<<<< HEAD:app/assets/stylesheets/application.scss
 
 .containera{
     .panel-bodya{
@@ -142,6 +151,14 @@ body{
             }
         }
     }
+=======
+.labelf{
+	color: white;
+}
+.containerb{
+	text-align: center;
+	margin-left: -5px;
+>>>>>>> ff6f4279524c6c82cfea89bf7f494b5d31f32209:app/assets/stylesheets/application.css
 }
   /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

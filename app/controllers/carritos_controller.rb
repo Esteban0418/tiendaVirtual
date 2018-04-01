@@ -25,7 +25,7 @@ class CarritosController < ApplicationController
   # POST /carritos.json
   def create
     @carrito = Carrito.new(carrito_params)
-
+    
     respond_to do |format|
       if @carrito.save
         format.html { redirect_to @carrito, notice: 'Carrito was successfully created.' }
