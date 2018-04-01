@@ -1,5 +1,6 @@
 class Producto < ActiveRecord::Base
-    belongs_to :inventario
+    after_validation :create_inventario
+    belongs_to :inventario, optional: true
     has_many :carrito_productos
     has_many :carritos, through: :carrito_productos
 
@@ -8,5 +9,11 @@ class Producto < ActiveRecord::Base
 
     def self.search(search)
       where("nombre LIKE ? OR descripcion LIKE ? OR tipo LIKE ? OR material LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
+    end
+
+    def create_inventario
+      inventario = Inventario.new(cantidad: self.cantidad, precio: self.precio* self.cantidad)
+      inventario.save
+      self.inventario = inventario
     end
 end
