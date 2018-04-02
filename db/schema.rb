@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20180401194411) do
-
+ActiveRecord::Schema.define(version: 20180402024233) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -37,8 +35,11 @@ ActiveRecord::Schema.define(version: 20180401194411) do
     t.index ["producto_id"], name: "index_carrito_productos_on_producto_id"
   end
 
-# Could not dump table "carritos" because of following StandardError
-#   Unknown type 'reference' for column 'user'
+  create_table "carritos", force: :cascade do |t|
+    t.string "cantidad_productos"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_carritos_on_user_id"
+  end
 
   create_table "inventarios", force: :cascade do |t|
     t.integer "cantidad", limit: 8
