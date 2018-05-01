@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+
 gem 'activeadmin'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
@@ -45,8 +46,10 @@ gem 'paperclip', '~> 6.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.7'
+  gem 'capybara', '~> 3.0', '>= 3.0.2'
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+
   gem 'selenium-webdriver'
 end
 
