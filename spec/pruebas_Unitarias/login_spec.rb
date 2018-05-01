@@ -10,11 +10,13 @@ RSpec.feature "pruebas unitarias del login" do
 		#capibara
 		#expect(page) 
 	end
-	it "cambiarcontraseña" do
-	visit root_path
-	click_on "Iniciar sesion"
-     lick_on "Forgot your password?"
-    fill_in "user[email]", with: "yessika@hotmail.com"
-	click_button('Send me reset password instructions')
+
+	it "cambiar contraseña" do
+		visit root_path
+		click_on "Iniciar sesion"
+		click_on "Forgot your password?"
+		fill_in "user[email]", with: "yessika@hotmail.com"
+		click_button('Send me reset password instructions')
+	end
 	
 end
