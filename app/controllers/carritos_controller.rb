@@ -24,6 +24,7 @@ class CarritosController < ApplicationController
   # POST /carritos
   # POST /carritos.json
   def create
+    
     @carrito = Carrito.new(carrito_params)
     
     respond_to do |format|

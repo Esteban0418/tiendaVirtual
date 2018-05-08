@@ -24,11 +24,14 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-
-    @user = User.new(user_params)
+      @carrito =Carrito.new(cantidad_productos: params[:user][:cantidad_productos].to_i)
+  
+    @user = @carrito.build_user(user_params)
+  
+    
   
     respond_to do |format|
-      if @user.save
+      if @carrito.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
