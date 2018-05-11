@@ -11,6 +11,7 @@ RSpec.feature "pruebas unitarias del login" do
 		#expect(page) 
 	end
 
+
 	it "cambiar contraseña" do
 		visit root_path
 		click_on "Iniciar sesion"
@@ -18,5 +19,4 @@ RSpec.feature "pruebas unitarias del login" do
 		fill_in "user[email]", with: "yessika@hotmail.com"
 		click_button('Send me reset password instructions')
 	end
-	
 end

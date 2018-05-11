@@ -70,6 +70,12 @@
 										<h6><%= producto.nombre %></h6>
 										<p><%= producto.descripcion %></p>
 										<h6 class="cash">$<b><%= producto.precio %></b></h6>
+										<a href=#myCarro><span class="glyphicon glyphicon-shopping-cart">
+										<%- if user_signed_in? %>
+										  
+										<% end %>
+											
+										</span>  Carrito </a>
 									</div>
 								</div>
 							<% end %>
