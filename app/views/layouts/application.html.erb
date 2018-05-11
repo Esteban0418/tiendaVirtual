@@ -12,93 +12,28 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-
-  	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-	<header>
-   <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Tienda virtual</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#myPage">Productos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-    	
-         <%- if user_signed_in? %>
-         <%= link_to 'Salir',destroy_user_session_path, method: :delete %>
-         <td><%= link_to 'información usuario', current_user%></td>
-         <% else %>
-      
-         <li><%= link_to 'Iniciar sesion', new_user_session_path %></li>
-         <li><%= link_to 'Registrarse', new_user_path  %></li>
-    <% end %>
-        
-        <li><a href="#mycarro"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-</header>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <%= render "layouts/header" %>
     <%= yield %>
-         <br><br><br><br>
-         <br><br> 
-      <footer>
-  <div id="contacto" class="container">
-  	<div class="labelblanco">
-  
-  <div class="row test">
-    <div class="col-md-4"><br><br>
-      <p><span class="glyphicon glyphicon-map-marker"></span>Armenia, COL</p>
-      <p><span class="glyphicon glyphicon-phone"></span>Telefono: +57 2830293932</p>
-      <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p> 
-    </div>
-    <div class="col-md-8">
-      <h3>Contacto</h3>
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comentario" rows="5"></textarea>
-      <div class="row">
-        <div class="col-md-12 form-group">
-          <button class="btn pull-left contacto" type="submit">Enviar</button>
-        </div>
-      </div> 
-    </div>
-  </div>
-</div>
-</div>
-      </footer>
+    <%= render "layouts/footer" %>
       <script>
-    $(document).ready(function(){
-     
-     $('[data-toggle="tooltip"]').tooltip(); 
+        $(document).ready(function(){
+        
+        $('[data-toggle="tooltip"]').tooltip(); 
 
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
- 
-    if (this.hash !== "") { 
-      event.preventDefault();
-      var hash = this.hash;
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-        window.location.hash = hash;
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    
+        if (this.hash !== "") { 
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+            window.location.hash = hash;
+          });
+        } 
       });
-    } 
-  });
-})
-</script>
+    })
+    </script>
   </body>
 </html>

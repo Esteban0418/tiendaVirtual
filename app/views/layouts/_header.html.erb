@@ -1,0 +1,33 @@
+<header>
+    <nav class="navbar navbar-inverse">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>                        
+           </button>
+           <a class="navbar-brand" href="#">Tienda virtual</a>
+         </div>
+         <div class="collapse navbar-collapse" id="myNavbar">
+           <ul class="nav navbar-nav">
+             <li class="active"><a href="#myPage">Productos</a></li>
+             <li><a href="#contacto">Contacto</a></li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+             
+              <%- if user_signed_in? %>
+              <%= link_to 'Salir',destroy_user_session_path, method: :delete %>
+              <td><%= link_to 'información usuario', current_user%></td>
+              <% else %>
+           
+              <li><%= link_to 'Iniciar sesion', new_user_session_path %></li>
+              <li><%= link_to 'Registrarse', new_user_path  %></li>
+         <% end %>
+             
+             <li><a href="#mycarro"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
+           </ul>
+         </div>
+       </div>
+     </nav>
+</header>
