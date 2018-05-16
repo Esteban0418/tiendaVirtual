@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :carritos
   resources :productos
   resources :users
-
+  post "/carritos/:id/add_product", to: "carritos#add_product", as: "add_product"
+  post "/carritos/:id/remove_product", to: "carritos#remove_product", as: "remove_product"
   root 'productos#index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

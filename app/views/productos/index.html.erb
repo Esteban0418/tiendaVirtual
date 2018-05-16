@@ -70,9 +70,10 @@
 										<h6><%= producto.nombre %></h6>
 										<p><%= producto.descripcion %></p>
 										<h6 class="cash">$<b><%= producto.precio %></b></h6>
-										<a href=#myCarro><span class="glyphicon glyphicon-shopping-cart">
 										<%- if user_signed_in? %>
-										  
+										  <%=link_to add_product_path(id: current_user.carrito.id , producto_id:producto.id), method: :post, remote: true do %>
+										  	<span class="glyphicon glyphicon-shopping-cart">
+										  <% end %>
 										<% end %>
 											
 										</span>  Carrito </a>
