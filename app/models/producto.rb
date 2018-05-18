@@ -16,4 +16,9 @@ class Producto < ActiveRecord::Base
       inventario.save
       self.inventario = inventario
     end
+     def sumar_cantidad
+    cantidad = Producto.carrito_productos.cantidad_productos+1
+    Producto.carrito_productos.cantidad_productos.save
+    self.carrito_productos.cantidad_productos = cantidad
+  end
 end

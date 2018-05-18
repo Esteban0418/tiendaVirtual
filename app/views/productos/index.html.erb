@@ -71,12 +71,23 @@
 										<p><%= producto.descripcion %></p>
 										<h6 class="cash">$<b><%= producto.precio %></b></h6>
 										<%- if user_signed_in? %>
-										  <%=link_to add_product_path(id: current_user.carrito.id , producto_id:producto.id), method: :post, remote: true do %>
-										  	<span class="glyphicon glyphicon-shopping-cart">
-										  <% end %>
-										<% end %>
+										     <%=link_to buscar_path(id: current_user.carrito.id , producto_id:producto.id), method: :get, remote: true do %>
+										     <% end %>
+										     <h5><%= producto %></h5>
+										      <h6><%= @product %></h6>
+										     <% if producto==@product %>
+										           <%producto.sumar_cantidad( producto_id:producto.id)%> 
+										     <% else %>
+										  			<%=link_to add_product_path(id: current_user.carrito.id , producto_id:producto.id), method: :post, remote: true do %>
+												
+										  			<span class="glyphicon glyphicon-shopping-cart">
 											
-										</span>  Carrito </a>
+										  				<% end %>
+										   		 <% end %>
+										    	
+											 <% end %>
+											
+											</span>  Carrito </a>
 									</div>
 								</div>
 							<% end %>
