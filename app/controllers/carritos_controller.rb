@@ -1,20 +1,40 @@
 class CarritosController < ApplicationController
-  before_action :set_carrito, only: [:show, :edit, :update, :destroy]
+  before_action :set_carrito, only: [:show, :edit, :update, :destroy, :add_product, :remove_product, :buscar, :sumar_cantidad]
 
   # GET /carritos
   # GET /carritos.json
   def index
-    @carritos = Carrito.all
+    @carritos = current_user.carrito.carrito_productos
   end
-
+  def buscar 
+    @product = @carrito.carrito_productos.find(params[:producto_id])
+  end
   # GET /carritos/1
   # GET /carritos/1.json
   def show
   end
-
+  def sumar_cantidad
+     @carrito_producto.cantidad_productos  = @carrito_producto.cantidad_productos+1
+    @carrito_producto.save
+  end
   # GET /carritos/new
   def new
     @carrito = Carrito.new
+  end
+
+  def add_product
+    @producto = Producto.find(params[:producto_id])
+    @carrito_producto = @carrito.carrito_productos.new
+    @carrito_producto.producto = @producto
+    @carrito_producto.cantidad_productos = 0
+    @carrito_producto.cantidad_productos = @carrito_producto.cantidad_productos+1
+    @carrito_producto.save
+    @carrito.save
+
+  end
+  def remove_product
+    @carrito.carrito_productos.find_by_producto_id(params[:producto_id]).destroy
+    
   end
 
   # GET /carritos/1/edit
@@ -42,12 +62,12 @@ class CarritosController < ApplicationController
   # PATCH/PUT /carritos/1.json
   def update
     respond_to do |format|
-      if @carrito.update(carrito_params)
-        format.html { redirect_to @carrito, notice: 'Carrito was successfully updated.' }
-        format.json { render :show, status: :ok, location: @carrito }
+      if @carrito_producto.update(params[:cantidad_productos])
+        format.html { redirect_to @carrito_producto, notice: 'Carrito was successfully updated.' }
+        format.json { render :show, status: :ok, location: @carrito_producto }
       else
         format.html { render :edit }
-        format.json { render json: @carrito.errors, status: :unprocessable_entity }
+        format.json { render json: @carrito_producto.errors, status: :unprocessable_entity }
       end
     end
   end
