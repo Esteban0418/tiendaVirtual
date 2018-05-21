@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :carritos
   resources :productos
   resources :users
+
+  post "/carritos/:id/comprar", to: "carritos#comprar", as: "comprar"
   post "/carritos/:id/add_product", to: "carritos#add_product", as: "add_product"
   post "/carritos/:id/sumar_cantidad", to: "carritos#sumar_cantidad", as: "sumar_cantidad"
   get "/carritos/:id/buscar", to: "carritos#buscar", as: "buscar"

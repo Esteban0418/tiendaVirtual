@@ -1,10 +1,11 @@
 class CarritosController < ApplicationController
-  before_action :set_carrito, only: [:show, :edit, :update, :destroy, :add_product, :remove_product, :buscar, :sumar_cantidad]
+  before_action :set_carrito, only: [:show, :edit, :update, :destroy, :add_product, :comprar, :remove_product, :buscar, :sumar_cantidad]
 
   # GET /carritos
   # GET /carritos.json
   def index
-    @carritos = current_user.carrito.carrito_productos
+    @carrito = current_user.carrito
+    @carritos = @carrito.carrito_productos
   end
   def buscar 
     @product = @carrito.carrito_productos.find(params[:producto_id])
@@ -13,6 +14,14 @@ class CarritosController < ApplicationController
   # GET /carritos/1.json
   def show
   end
+
+  def comprar
+    @carrito.restar_productos
+    @carrito.carrito_productos.destroy_all
+    flash[:success] = "Compra Exitosa"
+    redirect_to root_path
+  end
+
   def sumar_cantidad
      @carrito_producto.cantidad_productos  = @carrito_producto.cantidad_productos+1
     @carrito_producto.save
@@ -34,7 +43,6 @@ class CarritosController < ApplicationController
   end
   def remove_product
     @carrito.carrito_productos.find_by_producto_id(params[:producto_id]).destroy
-    
   end
 
   # GET /carritos/1/edit
