@@ -20,7 +20,7 @@
   
     <%= form.label :documento %>
   <div class="field">
-    <%= form.text_field :documento, id: :user_documento %>
+    <%= form.text_field :documento, id: :user_documento, required: true %>
   </div>
   
     <%= form.label :NIT %>
@@ -30,17 +30,17 @@
 
     <%= form.label :telefono %>
    <div class="text_field">
-    <%= form.text_field :telefono, id: :user_telefono %>
+    <%= form.text_field :telefono, id: :user_telefono, required: true %>
   </div>
 
     <%= form.label :nombre %>
    <div class="field">
-    <%= form.text_field :nombre, id: :user_nombre %>
+    <%= form.text_field :nombre, id: :user_nombre, required: true %>
   </div>
   
     <%= form.label :direccion %>
    <div class="field">
-    <%= form.text_field :direccion, id: :user_direccion %>
+    <%= form.text_field :direccion, id: :user_direccion, required: true %>
   </div>
 
   
@@ -52,7 +52,7 @@
   
     <%= form.label :ciudad %>
     <div class="field">
-      <%= form.text_field :ciudad, id: :user_ciudad %>
+      <%= form.text_field :ciudad, id: :user_ciudad, required: true %>
   </div>
 
   
@@ -64,13 +64,13 @@
  
     <%= form.label :profesion %>
     <div class="field">
-     <%= form.text_field :profesion, id: :user_profesion %>
+     <%= form.text_field :profesion, id: :user_profesion, required: true %>
   </div>
 
   
     <%= form.label :email %>
    <div class="field">
-    <%= form.text_field :email, id: :user_correo %>
+    <%= form.text_field :email, id: :user_correo, required: true %>
   </div><br>
 
 

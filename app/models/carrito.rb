@@ -14,6 +14,7 @@ class Carrito < ApplicationRecord
             producto.save
             inventario.save
         end
+        reporte.user = self.user
         reporte.save
     end
     

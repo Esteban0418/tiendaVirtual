@@ -27,7 +27,7 @@ ActiveAdmin.register Producto do
         f.input :foto
         f.input :nombre
         f.input :descripcion
-        f.input :tipo
+        f.input :tipo, :as => :select, :collection => [ ["Computador", "computador"], ["Portatil", "portatil"], ["Tablet", "tablet"] ]
         f.input :material
         f.input :precio
         f.input :dimenciones
