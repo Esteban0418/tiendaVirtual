@@ -1,17 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Carritos</h1>
+<div class="jumbotron text-center">
+      <h1>Carrito</h1> 
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Cantidad productos</th>
-      <th>producto</th>
-      <th colspan="3">Acciones</th>
+<div class="containerb">
+    <table class="table table-bordered">
+       <thead>
+         <tr>
+          <th><div class="labele">Cantidad productos</div></th>
+          <th><div class="labele">Producto</div></th>
+          <th><div class="labele">Acciones</div></th>
     </tr>
   </thead>
 
   <tbody>
+  <tr>
     <% contador_computador = 0 %>
     <% contador_portatil = 0 %>
     <% contador_tablet = 0 %>
@@ -21,10 +25,10 @@
           <% contador_computador = contador_computador + 1 %>
         <% else %>
           <% contador_computador = contador_computador + 1 %>
-          <tr>
-            <td id="contador_computador"><%= contador_computador %></td>
-            <td><%= carrito.producto.nombre %></td>
-            <td><%= link_to 'Ver Detalles Producto', carrito.producto %></td>
+          
+            <td><div class="labelf"> <td id="contador_computador"><%= contador_computador %></td></div></td>
+             <td><div class="labelf"><%= carrito.producto.nombre %></div></td>
+             <td><div class="labelf"><%= link_to 'Ver Detalles Producto', carrito.producto %></div></td</td>
           </tr>
         <% end %>
       <% end %>
