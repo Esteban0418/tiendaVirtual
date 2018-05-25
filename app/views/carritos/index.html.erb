@@ -27,7 +27,7 @@
   <tr>
     
           
-            <td><div class="labelf"><%= contador_computador %></div></td>
+            <td id="contador_computador"><div class="labelf"><%= contador_computador %></div></td>
              <td><div class="labelf"><%= carrito.producto.nombre %></div></td>
              <td><div class="labelf"><%= link_to 'Ver Detalles Producto', carrito.producto %></div></td>
           </tr>
@@ -39,9 +39,9 @@
         <% else %>
           <% contador_portatil = contador_portatil + 1 %>
           <tr>
-            <div class="labelf"><%= contador_portatil %></td></div>
-            <div class="labelf"><%= carrito.producto.nombre %></td></div>
-            <div class="labelf"><%= link_to 'Ver Detalles Producto', carrito.producto %></td></div>
+          <td id="contador_portatil"><div class="labelf"><%= contador_portatil %></div> </td>
+             <td><div class="labelf"><%= carrito.producto.nombre %></td></div>
+             <td><div class="labelf"><%= link_to 'Ver Detalles Producto', carrito.producto %></div> </td>
           </tr>
         <% end %>
       <% end %>
@@ -51,9 +51,9 @@
         <% else %>
           <% contador_tablet = contador_tablet + 1 %>
           <tr>
-            <div class="labelf"><%= contador_tablet %></td></div>
-            <div class="labelf"><%= carrito.producto.nombre %></td></div>
-            <div class="labelf"><%= link_to 'Ver Detalles Producto', carrito.producto %></td></div>
+            <td id="contador_tablet"> <div class="labelf"><%= contador_tablet %></div> </td>
+             <td><div class="labelf"><%= carrito.producto.nombre %></div> <td>
+             <td><div class="labelf"><%= link_to 'Ver Detalles Producto', carrito.producto %></div></td>
           </tr>
         <% end %>
       <% end %>
