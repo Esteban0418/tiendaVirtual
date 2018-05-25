@@ -17,7 +17,8 @@ class CarritosController < ApplicationController
 
   def comprar
     # @carrito.restar_productos
-    UserMailer.send_confirmation(current_user.email, @carrito.carrito_productos).deliver
+    @suma_total = @carrito.sumar_productos
+    UserMailer.send_confirmation(current_user.email, @carrito.carrito_productos, @suma_total ).deliver
     # @carrito.carrito_productos.destroy_all
     flash[:success] = "Compra Exitosa"
     redirect_to root_path

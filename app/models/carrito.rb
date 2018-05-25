@@ -17,5 +17,14 @@ class Carrito < ApplicationRecord
         reporte.user = self.user
         reporte.save
     end
+
+    def sumar_productos
+        suma_productos = 0
+        self.carrito_productos.each do |carrito_producto|
+            producto = carrito_producto.producto
+            suma_productos = producto.precio + suma_productos
+        end
+        suma_productos
+    end
     
 end
