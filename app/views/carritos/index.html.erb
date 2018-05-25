@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+    <% contador_computador = 0 %>
+    <% contador_portatil = 0 %>
+    <% contador_tablet = 0 %>
+    <% precio_computador= 0  %>
+    <% precio_portatil= 0  %>
+    <% precio_tablet = 0 %>
 <div class="jumbotron text-center">
       <h1>Carrito</h1> 
 </div>
@@ -8,58 +13,66 @@
     <table class="table table-bordered">
        <thead>
          <tr>
-          <th><div class="labele">Cantidad productos</div></th>
-          <th><div class="labele">Producto</div></th>
-          <th><div class="labele">Acciones</div></th>
+           <th><div class="labele">Acciones</div></th>
+           <th><div class="labele">Producto</div></th>
+           <th><div class="labele">Cantidad productos</div></th>
+           <th><div class="labele">Precio</div></th>
+           <th><div class="labele">Total</div></th>
     </tr>
   </thead>
 
   <tbody>
- <% contador_computador = 0 %>
-    <% contador_portatil = 0 %>
-    <% contador_tablet = 0 %>
     <% @carritos.each do |carrito| %>
       <% if carrito.producto.tipo == "computador" %>
+        <% precio_computador = carrito.producto.precio %>
         <% if contador_computador > 0 %>
           <% contador_computador = contador_computador + 1 %>
         <% else %>
           <% contador_computador = contador_computador + 1 %>
-  <tr>
-    
-          
+          <tr>   
+            <td><div class="labelf"><%= link_to 'Ver Detalles', carrito.producto %></div></td>
+            <td><div class="labelf"><%= carrito.producto.nombre %></div></td>
             <td id="contador_computador"><div class="labelf"><%= contador_computador %></div></td>
-             <td><div class="labelf"><%= carrito.producto.nombre %></div></td>
-             <td><div class="labelf"><%= link_to 'Ver Detalles', carrito.producto %></div></td>
+            <td><%= carrito.producto.precio %></td>
+            <td id="total_computador"></td>   
           </tr>
         <% end %>
       <% end %>
       <% if carrito.producto.tipo == "portatil" %>
+      <% precio_portatil = carrito.producto.precio %>
         <% if contador_portatil > 0 %>
           <% contador_portatil = contador_portatil + 1 %>
         <% else %>
           <% contador_portatil = contador_portatil + 1 %>
           <tr>
-          <td id="contador_portatil"><div class="labelf"><%= contador_portatil %></div> </td>
-             <td><div class="labelf"><%= carrito.producto.nombre %></td></div>
-             <td><div class="labelf"><%= link_to 'Ver Detalles', carrito.producto %></div> </td>
+            <td><div class="labelf"><%= link_to 'Ver Detalles', carrito.producto %></div> </td>
+            <td><div class="labelf"><%= carrito.producto.nombre %></td></div>
+            <td id="contador_portatil"><div class="labelf"><%= contador_portatil %></div> </td>
+            <td><%= carrito.producto.precio %></td>
+            <td id="total_portatil"></td>
           </tr>
         <% end %>
       <% end %>
       <% if carrito.producto.tipo == "tablet" %>
+      <% precio_tablet = carrito.producto.precio %>
         <% if contador_tablet > 0 %>
           <% contador_tablet = contador_tablet + 1 %>
         <% else %>
           <% contador_tablet = contador_tablet + 1 %>
           <tr>
-            <td id="contador_tablet"> <div class="labelf"><%= contador_tablet %></div> </td>
-             <td><div class="labelf"><%= carrito.producto.nombre %></div> <td>
-             <td><div class="labelf"><%= link_to 'Ver Detalles', carrito.producto %></div></td>
+            <td><div class="labelf"><%= link_to 'Ver Detalles', carrito.producto %></div></td>
+            <td><div class="labelf"><%= carrito.producto.nombre %></div> <td>
+              <td id="contador_tablet"> <div class="labelf"><%= contador_tablet %></div> </td>
+              <td><%= carrito.producto.precio %></td>
+            <td id="total_tablet"></td>
           </tr>
         <% end %>
       <% end %>
     <% end %>
    </tbody></table></div>
- 
+   <% total_computador = precio_computador * contador_computador %>
+   <% total_portatil = precio_portatil * contador_portatil %>
+   <% total_tablet = precio_tablet * contador_tablet %>
 
 <br>
 
@@ -67,6 +80,10 @@
 
 <script>
   $('#contador_computador').html("<%= contador_computador %>");
+  $('#total_computador').html("<%= total_computador %>");
   $('#contador_portatil').html("<%= contador_portatil %>");
+  $('#total_portatil').html("<%= total_portatil %>");
   $('#contador_tablet').html("<%= contador_tablet %>");
+  $('#total_tablet').html("<%= total_tablet %>");
+
 </script>
