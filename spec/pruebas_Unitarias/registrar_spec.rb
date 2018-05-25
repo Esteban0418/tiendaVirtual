@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "pruebas unitarias del registro" do 
+RSpec.feature "pruebas unitarias del registro de un cliente" do 
 
 	it "registro correcto" do 
 		visit root_path
@@ -15,6 +15,7 @@ RSpec.feature "pruebas unitarias del registro" do
 		fill_in "user[profesion]", with: "ing. de sistemas"
 		fill_in "user[email]", with: "yessikameliza@uqvirtual.edu.co"
 		click_button('Create User')
+		page.has_content?('32131231221')
 		#capibara
 		#expect(page) 
 	end
