@@ -14,7 +14,7 @@ RSpec.feature "pruebas unitarias del registro de un producto" do
 		fill_in "user[password]", with: "1234567890"
 		fill_in "user[profesion]", with: "ing. de sistemas"
 		fill_in "user[email]", with: "yessikameliza@hotmail.com"
-		click_button('Create User')
+		click_button('Crear usuario')
 		page.has_content?('32131231221')
 		visit ('/admin')
 		fill_in "user[email]", with: "admin@example.com"

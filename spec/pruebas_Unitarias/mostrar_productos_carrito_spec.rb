@@ -14,11 +14,11 @@ RSpec.feature "pruebas de mostrar los productos en el carrito" do
 		fill_in "user[password]", with: "1234567890"
 		fill_in "user[profesion]", with: "ing. de sistemas"
 		fill_in "user[email]", with: "yessika@hotmail.com"
-		click_button('Create User')
+		click_button('Crear usuario')
 		click_on "Iniciar sesion"
 		fill_in "user[email]", with: "yessika@hotmail.com"
 		fill_in "user_password", with: "1234567890"
-		click_button('Log in')
+		click_button('Ingresar')
 		click_on "Carrito"
 		page.has_content?('Cantidad productos')
 		

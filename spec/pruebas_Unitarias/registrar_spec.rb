@@ -14,7 +14,7 @@ RSpec.feature "pruebas unitarias del registro de un cliente" do
 		fill_in "user[password]", with: "123456789"
 		fill_in "user[profesion]", with: "ing. de sistemas"
 		fill_in "user[email]", with: "yessikameliza@uqvirtual.edu.co"
-		click_button('Create User')
+		click_button('Crear usuario')
 		page.has_content?('32131231221')
 		#capibara
 		#expect(page) 
