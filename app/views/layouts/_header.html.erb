@@ -7,7 +7,7 @@
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>                        
            </button>
-           <a class="navbar-brand" href="productos">Tienda virtual</a>
+           <%= link_to "Tienda virtual", root_path, class:"navbar-brand" %>
          </div>
          <div class="collapse navbar-collapse" id="myNavbar">
            <ul class="nav navbar-nav">
@@ -16,16 +16,18 @@
          </ul>
          <ul class="nav navbar-nav navbar-right">
              
-              <%- if user_signed_in? %>
-              <%= link_to 'Salir',destroy_user_session_path, method: :delete %>
-              <td><%= link_to 'información usuario', current_user%></td>
-              <% else %>
+          <%- if user_signed_in? %>
+                <%= link_to 'Salir',destroy_user_session_path, method: :delete %>
+                <td><%= link_to 'información usuario', current_user%></td>
+                <li><a href=carritos><span class="glyphicon glyphicon-shopping-cart"> </span> Carrito</a></li>
+        <% else %>
            
               <li><%= link_to 'Iniciar sesion', new_user_session_path %></li>
               <li><%= link_to 'Registrarse', new_user_path  %></li>
+
          <% end %>
              
-             <li><a href=carritos><span class="glyphicon glyphicon-shopping-cart"> </span> Carrito</a></li>
+             
            </ul>
          </div>
        </div>
