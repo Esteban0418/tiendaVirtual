@@ -54,7 +54,7 @@
         <% end %>
       <% end %>
       <% if carrito.producto.tipo == "tablet" %>
-      <% precio_tablet = carrito.producto.precio %>
+        <% precio_tablet = carrito.producto.precio %>
         <% if contador_tablet > 0 %>
           <% contador_tablet = contador_tablet + 1 %>
         <% else %>
@@ -73,10 +73,11 @@
    <% total_computador = precio_computador * contador_computador %>
    <% total_portatil = precio_portatil * contador_portatil %>
    <% total_tablet = precio_tablet * contador_tablet %>
+   <% total_absoluto = total_computador + total_portatil + total_tablet %>
 
 <br>
 
-<div class="labelc"><%= link_to 'Comprar', comprar_path(@carrito), class:"btn btn-primary", method: :post %></div>
+<div class="labelc"><%= link_to 'Comprar', comprar_path(@carrito),id:"absolute_total", class:"btn btn-primary", method: :post %></div>
 
 <script>
   $('#contador_computador').html("<%= contador_computador %>");
@@ -85,5 +86,6 @@
   $('#total_portatil').html("<%= total_portatil %>");
   $('#contador_tablet').html("<%= contador_tablet %>");
   $('#total_tablet').html("<%= total_tablet %>");
+  $('#absolute_total').html("¿ Comprar por <%= total_absoluto %> ?");
 
 </script>
