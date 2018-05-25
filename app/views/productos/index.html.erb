@@ -73,8 +73,6 @@
                                         <%- if user_signed_in? %>
                                              <%=link_to buscar_path(id: current_user.carrito.id , producto_id:producto.id), method: :get, remote: true do %>
                                              <% end %>
-                                             <h5><%= producto %></h5>
-                                              <h6><%= @product %></h6>
                                              <% if producto==@product %>
                                                    <%producto.sumar_cantidad( producto_id:producto.id)%> 
                                              <% else %>
@@ -87,7 +85,7 @@
                                                 
                                              <% end %>
                                               
-                                            </span>  Carrito </a>
+                                            </span>  Agregar al carrito </a>
                                     </div>
                                 </div>
                             <% end %>
