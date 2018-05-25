@@ -3,6 +3,9 @@ RSpec.feature "pruebas unitarias del registro de un producto" do
 
 	it "registro correcto" do 
 		visit ('/admin')
+		fill_in "user[email]", with: "admin@example.com"
+		fill_in "user[password]", with: "password"
+		click_button('Log in')
 		click_on "Productos"
 		click_on "New Producto"
 		fill_in "producto[nombre]", with: "dell"
