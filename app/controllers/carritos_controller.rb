@@ -21,7 +21,9 @@ class CarritosController < ApplicationController
     UserMailer.send_confirmation(current_user.email, @carrito.carrito_productos, @suma_total ).deliver
     @carrito.carrito_productos.destroy_all
     flash[:success] = "Compra Exitosa"
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Compra realizada exitosamente' }
+    end
   end
 
   def sumar_cantidad

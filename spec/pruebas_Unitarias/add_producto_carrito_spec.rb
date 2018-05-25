@@ -54,8 +54,11 @@ RSpec.feature "pruebas unitarias del registro de un producto" do
 		page.has_content?('Productos disponibles')
 		click_on "Productos"
 		click_on "Agregar al carrito"
+		click_on "Agregar al carrito"
 		visit carritos_path
-		page.has_content?('1')
+		page.has_content?('2')
+		click_on "Comprar"
+		expect(page).to have_content("Compra realizada exitosamente")
 
 		#capibara
 		#expect(page) 
