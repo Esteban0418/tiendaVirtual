@@ -17,16 +17,19 @@
       <div class="panel-heading"><h4>Registro</h4></div>
       <div class="panel-body">
         <div class="labela">
-  
+            <div id="select-box" class="under-space"><%= form.select :roles, options_for_select([["Persona Natural", "natural"], ["Persona Juridica", "juridica"]]) %></div>
+            
     <%= form.label :documento %>
   <div class="field">
     <%= form.text_field :documento, id: :user_documento, required: true %>
   </div>
-  
-    <%= form.label :NIT %>
-   <div class="field">
-    <%= form.text_field :NIT, id: :user_NIT %>
+  <div id="nit" style="display: none;">
+      <%= form.label :NIT %>
+      <div class="field">
+       <%= form.text_field :NIT, id: :user_NIT %>
+     </div>
   </div>
+    
 
     <%= form.label :telefono %>
    <div class="text_field">
@@ -83,3 +86,13 @@
 </div>
 </div>
 
+<script>
+  $('#select-box').on('change', function() {
+  if($('#select-box option').val() == 'natural'){ 
+    $('#nit').show();
+  }else if($("#select-box option").val() == 'juridica'){
+    $('#nit').show();
+    console.log("hola");
+  }
+});
+</script>
