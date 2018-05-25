@@ -23,7 +23,7 @@
   <div class="field">
     <%= form.text_field :documento, id: :user_documento, required: true %>
   </div>
-  <div id="nit" style="display: none;">
+  <div id="nit">
       <%= form.label :NIT %>
       <div class="field">
        <%= form.text_field :NIT, id: :user_NIT %>
@@ -85,14 +85,3 @@
 </div>
 </div>
 </div>
-
-<script>
-  $('#select-box').on('change', function() {
-  if($('#select-box option').val() == 'natural'){ 
-    $('#nit').show();
-  }else if($("#select-box option").val() == 'juridica'){
-    $('#nit').show();
-    console.log("hola");
-  }
-});
-</script>
