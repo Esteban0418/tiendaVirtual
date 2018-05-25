@@ -1,7 +1,7 @@
 require 'rails_helper'
-RSpec.feature "pruebas unitarias del login" do 
+RSpec.feature "pruebas unitarias del registro de un producto" do 
 
-	it "login correcto" do 
+	it "aggregar un producto al carrito" do 
 		visit root_path
 		click_on "Registrarse"
 		fill_in "user[documento]", with: "123"
@@ -21,25 +21,9 @@ RSpec.feature "pruebas unitarias del login" do
 		fill_in "user_password", with: "1234567890"
 		click_button('Log in')
 		page.has_content?('Productos disponibles')
+		click_on "Productos"
+		click_on "Carrito"
 		#capibara
 		#expect(page) 
-	end
-    it "login incorrecto" do 
-		visit root_path
-		click_on "Iniciar sesion"
-		fill_in "user[email]", with: "yessika@"
-		fill_in "user_password", with: "123456789"
-		click_button('Log in')
-		page.has_content?('Log in')
-		#capibara
-		#expect(page) 
-	end
-
-	it "cambiar contraseña" do
-		visit root_path
-		click_on "Iniciar sesion"
-		click_on "Forgot your password?"
-		fill_in "user[email]", with: "yessika@hotmail.com"
-		click_button('Send me reset password instructions')
 	end
 end
