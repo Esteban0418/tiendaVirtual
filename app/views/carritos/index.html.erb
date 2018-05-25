@@ -15,8 +15,7 @@
   </thead>
 
   <tbody>
-  <tr>
-    <% contador_computador = 0 %>
+ <% contador_computador = 0 %>
     <% contador_portatil = 0 %>
     <% contador_tablet = 0 %>
     <% @carritos.each do |carrito| %>
@@ -25,10 +24,12 @@
           <% contador_computador = contador_computador + 1 %>
         <% else %>
           <% contador_computador = contador_computador + 1 %>
+  <tr>
+    
           
-            <td><div class="labelf"> <td id="contador_computador"><%= contador_computador %></td></div></td>
+            <td id="contador_computador"><div class="labelf"><%= contador_computador %></div></td>
              <td><div class="labelf"><%= carrito.producto.nombre %></div></td>
-             <td><div class="labelf"><%= link_to 'Ver Detalles Producto', carrito.producto %></div></td</td>
+             <td><div class="labelf"><%= link_to 'Ver Detalles Producto', carrito.producto %></div></td>
           </tr>
         <% end %>
       <% end %>
@@ -38,9 +39,9 @@
         <% else %>
           <% contador_portatil = contador_portatil + 1 %>
           <tr>
-            <td id="contador_portatil"><%= contador_portatil %></td>
-            <td><%= carrito.producto.nombre %></td>
-            <td><%= link_to 'Ver Detalles Producto', carrito.producto %></td>
+          <td id="contador_portatil"><div class="labelf"><%= contador_portatil %></div> </td>
+             <td><div class="labelf"><%= carrito.producto.nombre %></td></div>
+             <td><div class="labelf"><%= link_to 'Ver Detalles Producto', carrito.producto %></div> </td>
           </tr>
         <% end %>
       <% end %>
@@ -50,20 +51,19 @@
         <% else %>
           <% contador_tablet = contador_tablet + 1 %>
           <tr>
-            <td id="contador_tablet"><%= contador_tablet %></td>
-            <td><%= carrito.producto.nombre %></td>
-            <td><%= link_to 'Ver Detalles Producto', carrito.producto %></td>
+            <td id="contador_tablet"> <div class="labelf"><%= contador_tablet %></div> </td>
+             <td><div class="labelf"><%= carrito.producto.nombre %></div> <td>
+             <td><div class="labelf"><%= link_to 'Ver Detalles Producto', carrito.producto %></div></td>
           </tr>
         <% end %>
       <% end %>
     <% end %>
-
-  </tbody>
-</table>
+   </tbody></table></div>
+ 
 
 <br>
 
-<%= link_to 'Comprar', comprar_path(@carrito), method: :post %>
+<div class="labelc"><%= link_to 'Comprar', comprar_path(@carrito), method: :post %></div>
 
 <script>
   $('#contador_computador').html("<%= contador_computador %>");

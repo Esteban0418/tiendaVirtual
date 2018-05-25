@@ -1,42 +1,32 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @producto.nombre %>
-</p>
-
-<p>
-  <strong>Descripcion:</strong>
-  <%= @producto.descripcion %>
-</p>
-
-<p>
-  <strong>Tipo:</strong>
-  <%= @producto.tipo %>
-</p>
-
-<p>
-  <strong>Material:</strong>
-  <%= @producto.material %>
-</p>
-
-<p>
-  <strong>Dimenciones:</strong>
-  <%= @producto.dimenciones %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @producto.color %>
-</p>
-
-<p>
-  <strong>Peso:</strong>
-  <%= @producto.peso %>
-</p>
-<p>
-  <strong>Precio:</strong>
-  <%= @producto.precio %>
-</p>
+<div class="containerb">
+    <table class="table table-bordered">
+       <thead>
+         <tr>
+          <th><div class="labele">Nombre:</div></th>
+          <th><div class="labele">Descripcion:</div></th>
+          <th><div class="labele">Tipo:</div></th>
+          <th><div class="labele">Material:</div></th>
+          <th><div class="labele">Dimenciones:</div></th>
+          <th><div class="labele">Color:</div></th>
+          <th><div class="labele">Peso:</div></th>
+          <th><div class="labele">Precio:</div></th>
+                </tr>
+    </thead>
+    <tbody>
+      <tr>
+         <td><div class="labelf"><%= @producto.nombre %></div></td>
+         <td><div class="labelf"><%= @producto.descripcion %></div></td>
+         <td><div class="labelf"><%= @producto.tipo %></div></td>
+         <td><div class="labelf"><%= @producto.material %></div></td>
+         <td><div class="labelf"><%= @producto.dimenciones %></div></td>
+         <td><div class="labelf"><%= @producto.color %></div></td>
+         <td><div class="labelf"><%= @producto.peso %></div></td>
+         <td><div class="labelf"><%= @producto.precio %></div></td>
+         </tr>
+    </tbody>
+  </table>
+  </div>
 
 <%= link_to 'Back', productos_path %>
