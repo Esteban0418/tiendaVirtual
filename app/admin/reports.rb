@@ -13,6 +13,6 @@ ActiveAdmin.register Reporte do
     filter :user, collection: -> {
         User.all.map{ |u| [u.email, u.id]}
     }
-    filter :created_at, label: 'Desde', as: :date_range
+    filter :created_at, label: 'Fecha', as: :date_range
   end
   
