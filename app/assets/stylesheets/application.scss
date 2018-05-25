@@ -2,6 +2,15 @@ body{
     background-color: #464646;  
     background-position: center center;
 }
+
+.under-space, input{
+    margin-bottom: 1em;
+}
+
+.btn-primary{
+    margin-top:1em;
+    margin-bottom: 1em;
+}
 .container {
       padding: 80px 120px;
   }

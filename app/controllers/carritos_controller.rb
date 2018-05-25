@@ -41,7 +41,9 @@ class CarritosController < ApplicationController
     @carrito_producto.cantidad_productos = @carrito_producto.cantidad_productos+1
     @carrito_producto.save
     @carrito.save
-
+    respond_to do |format|
+      format.html { redirect_to productos_path, notice: 'Producto agregado al carrito de compras' }
+    end
   end
   def remove_product
     @carrito.carrito_productos.find_by_producto_id(params[:producto_id]).destroy

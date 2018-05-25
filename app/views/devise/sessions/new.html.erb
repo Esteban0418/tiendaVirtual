@@ -27,13 +27,13 @@
   <% if devise_mapping.rememberable? -%>
     
       <%= f.check_box :remember_me %>
-      <div class="field">
-      <%= f.label :remember_me %>
-    </div>
+
+      <%= f.label :remember_me, "Recordarme" %>
+
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Ingresar", class:"btn btn-primary" %>
   </div> 
 <% end %>
 

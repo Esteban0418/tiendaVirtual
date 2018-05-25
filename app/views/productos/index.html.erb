@@ -77,15 +77,13 @@
                                                    <%producto.sumar_cantidad( producto_id:producto.id)%> 
                                              <% else %>
                                                     <%=link_to add_product_path(id: current_user.carrito.id , producto_id:producto.id), method: :post, remote: true do %>
+                                                        <span class="glyphicon glyphicon-shopping-cart">Agregar al carrito</span>  
+                                                    <% end %>
+                                            <% end %>
                                                 
-                                                    <span class="glyphicon glyphicon-shopping-cart">
-                                            
-                                                        <% end %>
-                                                 <% end %>
-                                                
-                                             <% end %>
+                                    <% end %>
                                               
-                                            </span>  Agregar al carrito </a>
+                                           
                                     </div>
                                 </div>
                             <% end %>

@@ -14,7 +14,7 @@ ActiveAdmin.register User do
         end
       else
         respond_to do |format|
-          format.html { redirect_to users_url, notice: 'El usuario ha realizado compras y no puede ser eliminado.' }
+          format.html { redirect_to "/admin/users", alert: 'El usuario ha realizado compras y no puede ser eliminado.' }
           format.json { head :no_content }
         end
       end

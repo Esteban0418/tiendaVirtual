@@ -19,7 +19,7 @@
           <%- if user_signed_in? %>
                 <%= link_to 'Salir',destroy_user_session_path, method: :delete %>
                 <td><%= link_to 'información usuario', current_user%></td>
-                <li><a href=carritos><span class="glyphicon glyphicon-shopping-cart"> </span> Carrito</a></li>
+                <li><a href="/carritos"><span class="glyphicon glyphicon-shopping-cart"> </span> Carrito</a></li>
         <% else %>
            
               <li><%= link_to 'Iniciar sesion', new_user_session_path %></li>
