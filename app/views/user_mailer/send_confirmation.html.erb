@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+    <h2>Confirmacion de Compra</h2>
+    <p>Productos comprados:</p>
+    <ul>
+        <% @carrito_productos.each do |carrito| %>
+            <li><%= carrito.producto.nombre %></li>
+        <% end %>
+    </ul>
+
+</body>
+</html>
