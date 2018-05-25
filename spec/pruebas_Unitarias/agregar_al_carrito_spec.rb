@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.feature "pruebas unitarias de agregar productos al  carrito" do 
 
-	it "registro correcto" do 
+	it "agregar producto al carrito" do 
 		visit root_path
 		click_on "Iniciar sesion"
 		fill_in "user[email]", with: "yessika@hotmail.com"
