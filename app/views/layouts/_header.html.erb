@@ -15,19 +15,14 @@
              <li><a href="#contacto">Contacto</a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
-             
-          <%- if user_signed_in? %>
-                <%= link_to 'Salir',destroy_user_session_path, method: :delete %>
-                <td><%= link_to 'información usuario', current_user%></td>
-                <li><a href="/carritos"><span class="glyphicon glyphicon-shopping-cart"> </span> Carrito</a></li>
-        <% else %>
-           
-              <li><%= link_to 'Iniciar sesion', new_user_session_path %></li>
-              <li><%= link_to 'Registrarse', new_user_path  %></li>
-
-         <% end %>
-             
-             
+            <% if user_signed_in? %>
+                  <li><a href="/carritos"><span class="glyphicon glyphicon-shopping-cart"> </span> Carrito</a></li>
+                  <li> <%= link_to 'información usuario', current_user%></li>
+                  <li><%= link_to 'Salir',destroy_user_session_path, method: :delete %></li>
+            <% else %>
+                <li><%= link_to 'Iniciar sesion', new_user_session_path %></li>
+                <li><%= link_to 'Registrarse', new_user_path  %></li>
+            <% end %>
            </ul>
          </div>
        </div>
