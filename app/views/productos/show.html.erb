@@ -1,32 +1,51 @@
 <p id="notice"><%= notice %>
-
-<div class="containerb">
-    <table class="table table-bordered">
-       <thead>
-         <tr>
-          <th><div class="labele">Nombre:</div></th>
-          <th><div class="labele">Descripcion:</div></th>
-          <th><div class="labele">Tipo:</div></th>
-          <th><div class="labele">Material:</div></th>
-          <th><div class="labele">Dimenciones:</div></th>
-          <th><div class="labele">Color:</div></th>
-          <th><div class="labele">Peso:</div></th>
-          <th><div class="labele">Precio:</div></th>
-                </tr>
-    </thead>
-    <tbody>
-      <tr>
-         <td><div class="labelf"><%= @producto.nombre %></div></td>
-         <td><div class="labelf"><%= @producto.descripcion %></div></td>
-         <td><div class="labelf"><%= @producto.tipo %></div></td>
-         <td><div class="labelf"><%= @producto.material %></div></td>
-         <td><div class="labelf"><%= @producto.dimenciones %></div></td>
-         <td><div class="labelf"><%= @producto.color %></div></td>
-         <td><div class="labelf"><%= @producto.peso %></div></td>
-         <td><div class="labelf"><%= @producto.precio %></div></td>
-         </tr>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-lg-12">
+      <div id="producto-contenedor-descripcion" class="text-center" style="background: white;">
+          <h2><%= @producto.nombre %></h2>
+          <%= image_tag @producto.foto.url(:medium) %>
+          <table class="table-bordered" style="margin-left: auto;margin-right: auto;width: 40%; margin-top:2em;">
+            <tr>
+              <td class="bold">Descripcion</td>
+              <td> <%= @producto.descripcion %></td>
+            </tr>
+            <tr>
+              <td class="bold">Tipo</td>
+              <td> <%= @producto.tipo%></td>
+            </tr>
+            <tr>
+              <td class="bold">Material</td>
+              <td> <%= @producto.material %></td>
+            </tr>
+            <tr>
+              <td class="bold">Dimensiones</td>
+              <td> <%= @producto.dimenciones %></td>
+            </tr>
+            <tr>
+              <td class="bold">Color</td>
+              <td> <%= @producto.color %></td>
+            </tr>
+            <tr>
+              <td class="bold">Peso</td>
+              <td> <%= @producto.peso %></td>
+            </tr>
+            <tr>
+              <td class="bold">Precio</td>
+              <td> <%= @producto.precio %></td>
+            </tr>
+          </table>
+          <div class=" row text-center" style="margin-top:1em;">
+              <% if user_signed_in? %>
+                <%= link_to add_product_path(id: current_user.carrito.id , producto_id: @producto.id), method: :post, class:"btn btn-success" do %>
+                  <span class="glyphicon glyphicon-shopping-cart"></span>
+                  Agregar al carrito
+                <% end %>
+              <% end %>
+              <%= link_to 'Volver', productos_path, class:"btn btn-primary" %>
+          </div>
+      </div>
+    </div>
   </div>
+  
 
-<%= link_to 'Back', productos_path %>
+

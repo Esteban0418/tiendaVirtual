@@ -56,13 +56,13 @@
 <div id="myPage" class="containera">
     <div class="panel-groupa">
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading"style="font-weight:bold;">
                 Productos disponibles
             </div>
-            <div class="panel-bodya">
+            <div class="panel-bodya" style="padding-left: 20px;padding-right: 20px;">
                 <div class="row">
                     <% @productos.each do |producto| %>
-                        <div class="col-xs-12 col-lg-3" style="margin-top:2em;">
+                        <div class="col-xs-12 col-lg-3" style="margin-top:2em; margin-bottom: 2em;">
                             <%= link_to producto do %>
                                 <div style="border:thin solid black;">
                                     <%= image_tag producto.foto.url(:medium) %>
@@ -70,14 +70,15 @@
                                         <h6><%= producto.nombre %></h6>
                                         <p><%= producto.descripcion %></p>
                                         <h6 class="cash">$<b><%= producto.precio %></b></h6>
-                                        <%- if user_signed_in? %>
-                                             <%=link_to buscar_path(id: current_user.carrito.id , producto_id:producto.id), method: :get, remote: true do %>
+                                        <% if user_signed_in? %>
+                                             <%= link_to buscar_path(id: current_user.carrito.id , producto_id:producto.id), method: :get, remote: true do %>
                                              <% end %>
                                              <% if producto==@product %>
                                                    <%producto.sumar_cantidad( producto_id:producto.id)%> 
                                              <% else %>
                                                     <%=link_to add_product_path(id: current_user.carrito.id , producto_id:producto.id), method: :post, remote: true do %>
-                                                        <span class="glyphicon glyphicon-shopping-cart">Agregar al carrito</span>  
+                                                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                                                        Agregar al carrito
                                                     <% end %>
                                             <% end %>
                                                 
